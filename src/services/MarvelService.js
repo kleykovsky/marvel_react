@@ -23,7 +23,7 @@ class MarvelService {
     _transformCharacter = (char) => {
         const notDesc = 'Sorry the description hasn\'t been added yet!'
         const amountDesc = char.description
-        const MAX_LEN = 210;
+        const MAX_LEN = 200;
         const newAmDesc = (amountDesc.length > MAX_LEN) ?
               amountDesc.substring(0, MAX_LEN) + '...' : amountDesc
         return {
