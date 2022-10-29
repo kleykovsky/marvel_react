@@ -29,6 +29,12 @@ class RandomChar extends Component{
         })
     }
 
+    onCharLoading = () => {
+        this.setState({
+            loading: true,
+        })
+    }
+
     onError = () => {
         this.setState({
             loading: false,
@@ -40,6 +46,7 @@ class RandomChar extends Component{
         const _MAX_ID = 1011400,
               _MIN_ID = 1011000;
         const id = Math.floor(Math.random() * (_MAX_ID - _MIN_ID) + _MIN_ID - 130);
+        this.onCharLoading();
         this.marvelService
             .getCharacter(id)
             .then(this.onCharLoaded)
@@ -59,7 +66,9 @@ class RandomChar extends Component{
 
         return (
             <div className="randomchar">
-                {errorMessage} {spinner} {content}
+                {errorMessage}
+                {spinner}
+                {content}
                 {/*{loading ? <Spinner/> : <View char={char}/>}*/}
                 <div className="randomchar__static">
                     <p className="randomchar__title">
@@ -80,6 +89,8 @@ class RandomChar extends Component{
         )
     }
 }
+
+
 const View = ({char}) => {
     const {name, description, thumbnail, homepage, wiki} = char
     let className = 'randomchar__img';

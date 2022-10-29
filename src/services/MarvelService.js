@@ -27,11 +27,13 @@ class MarvelService {
         const newAmDesc = (amountDesc.length > MAX_LEN) ?
               amountDesc.substring(0, MAX_LEN) + '...' : amountDesc
         return {
+            id: char.id,
             name: char.name,
             description: newAmDesc ? newAmDesc : notDesc,
             thumbnail: char.thumbnail.path + '.' + char.thumbnail.extension,
             homepage: char.urls[0].url,
-            wiki: char.urls[0].url,
+            wiki: char.urls[1].url,
+            comics: char.comics.items
         }
     }
 }
