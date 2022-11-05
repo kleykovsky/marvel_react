@@ -5,6 +5,7 @@ import Skeleton from "../skeleton/Skeleton";
 import './charInfo.scss';
 import thor from '../../resources/img/thor.jpeg';
 import MarvelService from "../../services/MarvelService";
+import PropTypes, {checkPropTypes} from 'prop-types';
 
 class CharInfo extends Component{
 
@@ -25,7 +26,6 @@ class CharInfo extends Component{
             this.updateChar();
         }
     }
-
 
     updateChar = () => {
         const {charId, ...props} = this.props
@@ -61,7 +61,6 @@ class CharInfo extends Component{
             error: true,
         })
     }
-
 
     render() {
         const {char, loading, error} = this.state
@@ -115,7 +114,8 @@ const View = ({char}) => {
                 {comics.length > 0 ? null : 'There is no comics with this character'}
                 {
                     comics.map((item, i) => {
-                        if(i >= 10) return;
+                        // eslint-disable-next-line
+                        if(i > 9) return;
                         return (
                             <li key={i} className="char__comics-item">
                                 {item.name}
@@ -128,5 +128,9 @@ const View = ({char}) => {
     )
 }
 
+CharInfo.propTypes = {
+    charId: PropTypes.number
+
+}
 
 export default CharInfo;

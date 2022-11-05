@@ -3,8 +3,9 @@ import AppHeader from "../appHeader/AppHeader";
 import RandomChar from "../randomChar/RandomChar";
 import CharList from "../charList/CharList";
 import CharInfo from "../charInfo/CharInfo";
-import decoration from '../../resources/img/vision.png';
 import ErrorBoundary from "../errorBoundary/ErrorBoundary";
+import decoration from '../../resources/img/vision.png';
+import ItemBorder from "../border/itemBorder";
 
 class App extends Component{
 
@@ -18,7 +19,6 @@ class App extends Component{
             selectedChar: id,
         })
     }
-
 
     render() {
 
