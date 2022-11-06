@@ -45,7 +45,7 @@ class CharList extends Component {
         }
 
         this.setState(({offset, charList}) => ({
-            charList: [...newCharList, ...charList],
+            charList: [...newCharList],
             loading: false,
             newItemLoading: false,
             offset: offset + 9,
@@ -74,12 +74,9 @@ class CharList extends Component {
     }
 
     renderItems(arr) {
-        const items = arr.map((item, i) => {
-            let imgStyle = {'objectFit': 'cover'};
-            if (item.thumbnail === 'https://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
-                imgStyle = {'objectFit': 'unset'};
-            }
 
+        const items = arr.map((item, i) => {
+            let  imgStyle = {objectFit: 'unset'};
             return (
                 <li className='char__item'
                     tabIndex={0}
