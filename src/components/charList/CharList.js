@@ -76,7 +76,7 @@ class CharList extends Component {
     renderItems(arr) {
 
         const items = arr.map((item, i) => {
-            let  imgStyle = {objectFit: 'unset'};
+            let  imgStyle = {objectFit: 'cover'};
             return (
                 <li className='char__item'
                     tabIndex={0}
