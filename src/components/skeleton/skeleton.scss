@@ -8,18 +8,20 @@
     &__circle {
         width: 40px;
         height: 40px;
-        background-color: #C4C4C4;
+        background-color: #a42929;
         border-radius: 100%;
     }
     &__mini {
         width: 100%;
         height: 16px;
-        background-color: #C4C4C4;
+        background-color: #a42929;
+        border-radius: 5px;
     }
     &__block {
         height: 35px;
         width: 100%;
-        background-color: #C4C4C4;
+        background-color: #a42929;
         margin-top: 15px;
+        border-radius: 5px;
     }
 }
